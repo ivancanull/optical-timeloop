@@ -131,8 +131,8 @@ problem:
   S: 3
   P: 48
   Q: 480
-  C: 1
-  K: 16
+  C: 128
+  K: 64
   N: 1
   Wstride: 1
   Hstride: 1

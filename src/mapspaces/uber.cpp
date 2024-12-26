@@ -142,6 +142,7 @@ void Uber::InitIndexFactorizationSpace()
     cofactors_order[problem::Shape::FlattenedDimensionID(i)] = arch_props_.TilingLevels();
   }
 
+  // 
   // Next, for each problem dimension, we need to tell the index_factorization_space_
   // object if any of the cofactors have been given a fixed, min or max value by
   // the user. 
@@ -209,6 +210,7 @@ void Uber::InitIndexFactorizationSpace()
 
   // We're now ready to initialize the object.
   index_factorization_space_.Init(cofactors_order, prefactors, maxfactors, minfactors);
+  // cofactors all set to loop number 6
 
   // Update the size of the mapspace.
   size_[int(mapspace::Dimension::IndexFactorization)] = index_factorization_space_.Size();

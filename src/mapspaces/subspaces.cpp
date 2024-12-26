@@ -92,12 +92,32 @@ void IndexFactorizationSpace::Init(std::map<problem::Shape::FlattenedDimensionID
       dimension_factors_[idim] = Factors(workload_.GetFlattenedBound(dim), cofactors_order[dim], prefactors[dim]);
 
     if (maxfactors.find(dim) != maxfactors.end())
+    {
       dimension_factors_[idim].PruneMax(maxfactors[dim]);
+      // std::cout << "Maxfactors for dimension " << maxfactors[dim].size() << std::endl;
+    }
 
     if (minfactors.find(dim) != minfactors.end())
+    {
       dimension_factors_[idim].PruneMin(minfactors[dim]);
+      // std::cout << "Minfactors for dimension " << minfactors[dim].size() << std::endl;
+    }
 
+    // Print each architecture dimension's factors for debugging.
+    // std::cout << "Factors for dimension " << workload_.GetShape()->FlattenedDimensionIDToName.at(dim) << std::endl;
+    // for (int idimi = 0; idimi < int(dimension_factors_[idim].size()); idimi++)
+    // {
+    //   std::cout << "Factor: ";
+    //   for (auto& f : dimension_factors_[idim][idimi])
+    //   {
+    //     std::cout << f << " ";
+    //   }
+    //   std::cout << std::endl;
+    // }
+    
     counter_base[idim] = dimension_factors_[idim].size();
+    // dimension_factors_ contains all factors combination for each loop tile
+    // dimension_factors_[loop][architecture]
   }
 
   tiling_counter_.Init(counter_base);

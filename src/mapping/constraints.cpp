@@ -627,9 +627,9 @@ void Constraints::ParseSingleConstraint(
         exit(1);
       }
       factors_[level_id][factor.first] = factor.second;
-      // std::cout << "Parsing factor level = " << arch_props_.TilingLevelName(level_id)
-      //           << " dim = " << workload_.GetShape()->FlattenedDimensionIDToName.at(factor.first)
-      //           << " factor = " << factor.second << std::endl;
+      std::cout << "Parsing factor level = " << arch_props_.TilingLevelName(level_id)
+                << " dim = " << workload_.GetShape()->FlattenedDimensionIDToName.at(factor.first)
+                << " factor = " << factor.second << std::endl;
     }
 
     auto level_max_factors = ParseMaxFactors(attributes);

@@ -63,37 +63,37 @@ mapspace:
   - split: 4
     permutation: NPQR SCK
     type: spatial
-    target: DummyBuffer
-    factors: N1 P1 Q1 R1 S0
+    target: DummyBuffer 
+    factors: N1 P1 Q1 R1 S0 # - 3
   - split: 7
     permutation: NCPRS QK
     type: spatial
     target: GlobalBuffer
-    factors: N1 C1 P1 R1 S1
+    factors: N1 C1 P1 R1 S1 # - 5
   - permutation: NCPQRS K
     type: temporal
     target: PsumRegFile
-    factors: N1 C1 P1 Q1 R1 S1
+    factors: N1 C1 P1 Q1 R1 S1 # - 0
   - permutation: NKPQS CR
     type: temporal
     target: WeightRegFile
-    factors: N1 K1 P1 Q1 S1 R0
+    factors: N1 K1 P1 Q1 S1 R0 # - 1 
   - permutation: NKCPQRS
     type: temporal
     target: InputRegFile
-    factors: N1 K1 C1 P1 Q1 R1 S1
+    factors: N1 K1 C1 P1 Q1 R1 S1 # - 2
   - permutation: NKCPQRS
     type: temporal
-    target: DummyBuffer
-    factors: N1 K1 C1 P1 Q1 R1 S1
+    target: DummyBuffer 
+    factors: N1 K1 C1 P1 Q1 R1 S1 # - 4
   - permutation: QRSC PNK
     type: temporal
     target: GlobalBuffer
-    factors: Q1 R1 S1 C1 P0
+    factors: Q1 R1 S1 C1 P0 # - 6
   - permutation: RSP CKNQ
     type: temporal
     target: DRAM
-    factors: R1 S1 P1
+    factors: R1 S1 P1 # - 7
   constraints: rowstationary
 mapper:
   algorithm: linear_pruned

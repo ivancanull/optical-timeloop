@@ -18,6 +18,9 @@ timeloop-model.map+stats.xml
 timeloop-model.map.txt
 # an extra file that gets generated when running test
 timeloop-model.map.cfg 
+timeloop-model.map.tensella.txt
+timeloop-mapper.orojenesis.csv
+timeloop-mapper.map.tensella.txt
 
 ### Common, non-project-specific generated files.
 # Scons caches
@@ -53,3 +56,46 @@ venv
 ### Documentation
 .doxygen-config.bak
 docs/
+
+### Others
+# Zip Files
+*.tar.xz
+*.tar.gz
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.ko
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# barvinok
+barvinok-0.41.8/
+
+# ntl
+ntl-11.5.1/
